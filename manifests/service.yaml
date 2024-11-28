@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-cicd-argo
+  labels:
+    app: test-cicd-argo
+    backstage.io/kubernetes-id: test-cicd-argo
+spec:
+  type: ClusterIP
+  selector:
+    app: test-cicd-argo
+  ports:
+    - port: 8080
+      protocol: TCP
+      name: http
